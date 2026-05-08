@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitor de Impresoras</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+
+
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <div class="header-titles">
+        <h1>Monitor de Impresoras</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-right">
+  <span id="scan-time">—</span>
+  <button id="scan-btn" onclick="triggerScan()">Escanear ahora</button>
+  <button id="export-btn" onclick="exportCSV()">Exportar CSV</button>
+</div>
+    </div>
+  </header>
+
+
+
+
+  <!-- Main -->
+  <main>
+    <div class="filter-bar">
+      <button class="filter-btn active" id="btn-all" onclick="setFilter('all', this)">
+        Todas <span class="filter-count" id="count-total">—</span>
+      </button>
+      <button class="filter-btn critical" id="btn-critical" onclick="setFilter('critical', this)">
+        Criticas <span class="filter-count" id="count-critical">—</span>
+      </button>
+      <button class="filter-btn low" id="btn-low" onclick="setFilter('low', this)">
+        Bajas <span class="filter-count" id="count-low">—</span>
+      </button>
+      <button class="filter-btn ok" id="btn-ok" onclick="setFilter('ok', this)">
+        Correctas <span class="filter-count" id="count-ok">—</span>
+      </button>
+    </div>
+    <div class="grid" id="grid">
+      <div class="state-msg">Iniciando escaneo...</div>
+    </div>
+  </main>
+
+  <script>
+    const POLL_INTERVAL = {{ poll_interval }};
+  </script>
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+
+</html>

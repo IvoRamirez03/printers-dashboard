@@ -1,0 +1,16 @@
+services:
+  printer-dashboard:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: printer-dashboard
+    ports:
+      - "2026:2026"
+    environment:
+      IP_START: "20"
+      IP_END: "39"
+      SNMP_COMMUNITY: "public"
+      POLL_INTERVAL: "120"
+    # Necesario para que el contenedor acceda a la red local para SNMP
+    # network_mode: host
+    restart: unless-stopped

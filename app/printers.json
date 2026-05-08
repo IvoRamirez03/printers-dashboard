@@ -1,0 +1,379 @@
+{
+  "printers": [
+    {
+      "ip": "192.168.2.20",
+      "name": "impresora-respaldo",
+      "model": "Brother MFC-L3760CDW",
+      "serial": "E82408K4N682830",
+      "toner_ref": "TN 248",
+      "connection": "Ethernet",
+      "protocol": "snmp_brother",
+      "type": "laser",
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
+    },
+    {
+      "ip": "192.168.2.21",
+      "name": "IMPRESORA-JOSELUIS",
+      "model": "HP OfficeJet Pro 9010 series",
+      "serial": "TH33K771GZ",
+      "toner_ref": "HP 953",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.22",
+      "name": "impresora-rh",
+      "model": "HP OfficeJet Pro 9010 series",
+      "serial": "TH33S771FJ",
+      "toner_ref": "HP 963",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.23",
+      "name": "LC",
+      "model": "Brother MFC-L3740CDW series",
+      "serial": "TH3567705J",
+      "toner_ref": "TN 248",
+      "connection": "Ethernet",
+      "protocol": "snmp_brother",
+      "type": "laser",
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
+    },
+    {
+      "ip": "192.168.2.24",
+      "name": "impresora-A3",
+      "model": "Brother MFC-J5340DW",
+      "serial": "E81779B4H652459",
+      "toner_ref": "LC 422",
+      "connection": "Ethernet",
+      "protocol": "snmp_brother",
+      "type": "inkjet",
+      "supplies": [
+        {
+          "id": 700,
+          "name": "Black Ink",
+          "type": "ink"
+        },
+        {
+          "id": 701,
+          "name": "Cyan Ink",
+          "type": "ink"
+        },
+        {
+          "id": 702,
+          "name": "Magenta Ink",
+          "type": "ink"
+        },
+        {
+          "id": 703,
+          "name": "Yellow Ink",
+          "type": "ink"
+        },
+        {
+          "id": 912,
+          "name": "Absorbedor",
+          "type": "waste"
+        }
+      ]
+    },
+    {
+      "ip": "192.168.2.25",
+      "name": "Impresora-Investigacion",
+      "model": "Brother HL-L8230CDW series",
+      "serial": "E77440A1F638805",
+      "toner_ref": "TN 248",
+      "connection": "WiFi",
+      "protocol": "snmp_brother",
+      "type": "laser",
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
+    },
+    {
+      "ip": "192.168.2.26",
+      "name": "Impresora-Comercial",
+      "model": "HP OfficeJet Pro 8130e series",
+      "serial": "TH49EHN1N2",
+      "toner_ref": "HP 924",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.27",
+      "name": "IMPRESORA-Raquel",
+      "model": "Brother MFC-L8690CDW series",
+      "serial": "E77440L3F214649",
+      "toner_ref": "TN 423",
+      "connection": "Ethernet",
+      "protocol": "snmp_brother",
+      "type": "laser",
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
+    },
+    {
+      "ip": "192.168.2.28",
+      "name": "N/A",
+      "model": "Desconocido",
+      "serial": "",
+      "toner_ref": "",
+      "connection": "N/A",
+      "protocol": "none",
+      "type": "unknown",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.29",
+      "name": "impresora-salud",
+      "model": "HP OfficeJet Pro 8210 series",
+      "serial": "CN2B7LT1MQ",
+      "toner_ref": "HP 953",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.30",
+      "name": "impresora-administracion",
+      "model": "HP OfficeJet Pro 9125e series",
+      "serial": "TH33S771FJ",
+      "toner_ref": "HP 937",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.31",
+      "name": "Impresora-Deportes",
+      "model": "HP OfficeJet Pro 8210",
+      "serial": "CN17HJT0K4",
+      "toner_ref": "HP 953",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.32",
+      "name": "Impresora-Patricia",
+      "model": "HP Color LaserJet Pro 3202",
+      "serial": "VNC1X09033",
+      "toner_ref": "HP W219X",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "laser",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.33",
+      "name": "JF",
+      "model": "HP OfficeJet Pro 9120e series",
+      "serial": "TH51OJ71DM",
+      "toner_ref": "HP 937",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.34",
+      "name": "LB",
+      "model": "HP OfficeJet Pro 8135 series",
+      "serial": "TH528KN0DR",
+      "toner_ref": "HP 924",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.35",
+      "name": "Impresora-Oficial",
+      "model": "HP Color LaserJet Pro MFP 4302",
+      "serial": "THBTT4811B",
+      "toner_ref": "HP 220A",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "laser",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.36",
+      "name": "EI",
+      "model": "HP Smart Tank 7000 series",
+      "serial": "CN493671CP",
+      "toner_ref": "HP 31XL/32XL",
+      "connection": "WiFi",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.37",
+      "name": "impresora-pilar",
+      "model": "Brother MFC-L3740CDW series",
+      "serial": "E8279M5N448196",
+      "toner_ref": "TN 248",
+      "connection": "Ethernet",
+      "protocol": "snmp_brother",
+      "type": "inkjet",
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
+    },
+    {
+      "ip": "192.168.2.38",
+      "name": "Impresora-OfficeManager",
+      "model": "HP OfficeJet Pro 9010",
+      "serial": "TH28N5Z0XF",
+      "toner_ref": "HP 924e",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    },
+    {
+      "ip": "192.168.2.39",
+      "name": "impresora-cool",
+      "model": "HP OfficeJet Pro 9120e series",
+      "serial": "TH51OJ71B8",
+      "toner_ref": "HP 937",
+      "connection": "Ethernet",
+      "protocol": "snmp_standard",
+      "type": "inkjet"
+    }
+  ]
+}
