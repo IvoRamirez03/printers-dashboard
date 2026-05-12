@@ -351,7 +351,7 @@
       "toner_ref": "TN 248",
       "connection": "Ethernet",
       "protocol": "snmp_brother",
-      "type": "inkjet",
+      "type": "laser",
       "supplies": [
         {
           "id": 898,
