@@ -220,14 +220,40 @@
     },
     {
       "ip": "192.168.2.28",
-      "name": "N/A",
-      "model": "Desconocido",
-      "serial": "",
-      "toner_ref": "",
-      "connection": "N/A",
-      "protocol": "none",
-      "type": "unknown",
-      "supplies": []
+      "name": "Eventos",
+      "model": "MFC-L3760CDW series",
+      "serial": "E82408K4N682834",
+      "toner_ref": "TN 248",
+      "connection": "Ethernet",
+      "protocol": "snmp_brother",
+      "type": "laser",
+            "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
     },
     {
       "ip": "192.168.2.29",
