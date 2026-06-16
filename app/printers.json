@@ -42,7 +42,7 @@
       "name": "IMPRESORA-JOSELUIS",
       "model": "HP OfficeJet Pro 9010 series",
       "serial": "TH33K771GZ",
-      "toner_ref": "HP 953",
+      "toner_ref": "HP 963",
       "connection": "Ethernet",
       "protocol": "snmp_standard",
       "type": "inkjet",
@@ -227,7 +227,7 @@
       "connection": "Ethernet",
       "protocol": "snmp_brother",
       "type": "laser",
-            "supplies": [
+      "supplies": [
         {
           "id": 898,
           "name": "Black Toner",
@@ -291,13 +291,39 @@
     {
       "ip": "192.168.2.32",
       "name": "Impresora-Patricia",
-      "model": "HP Color LaserJet Pro 3202",
-      "serial": "VNC1X09033",
-      "toner_ref": "HP W219X",
+      "model": "Brother MFC-L3740CDW series",
+      "serial": "E82790L5N407760",
+      "toner_ref": "TN 248",
       "connection": "Ethernet",
-      "protocol": "snmp_standard",
+      "protocol": "snmp_brother",
       "type": "laser",
-      "supplies": []
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
     },
     {
       "ip": "192.168.2.33",
@@ -335,13 +361,39 @@
     {
       "ip": "192.168.2.36",
       "name": "EI",
-      "model": "HP Smart Tank 7000 series",
+      "model": "MFC-L3740CDW series",
       "serial": "CN493671CP",
       "toner_ref": "HP 31XL/32XL",
       "connection": "WiFi",
-      "protocol": "snmp_standard",
+      "protocol": "snmp_brother",
       "type": "inkjet",
-      "supplies": []
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
     },
     {
       "ip": "192.168.2.37",

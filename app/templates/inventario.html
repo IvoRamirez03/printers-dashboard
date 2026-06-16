@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario de Tóner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/inventario.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Control de Stock de Tóner</h1>
+        <table id="tonerTable">
+            <thead>
+                <tr>
+                    <th>Tipo de Tóner</th>
+                    <th>Negro</th>
+                    <th>Amarillo</th>
+                    <th>Magenta</th>
+                    <th>Cian</th>
+                    <th>Tricolor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HP 31XL/32XL</td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="not-exist">N/E</td>
+                    <td class="not-exist">N/E</td>
+                    <td class="not-exist">N/E</td>
+                    <td class="not-exist">N/E</td>
+                </tr>
+                <tr>
+                    <td>HP 220A</td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="not-exist">N/E</td>
+                </tr>
+                <tr>
+                    <td>HP 302</td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="not-exist">N/E</td>
+                    <td class="not-exist">N/E</td>
+                    <td class="not-exist">N/E</td>
+                    <td class="stock-cell" data-value="2"></td>
+                </tr>
+                <tr>
+                    <td>HP 924</td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="3"></td>
+                    <td class="stock-cell" data-value="3"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="not-exist">N/E</td>
+                </tr>
+                <tr>
+                    <td>HP 937</td>
+                    <td class="stock-cell" data-value="3"></td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="not-exist">N/E</td>
+                </tr>
+                <tr>
+                    <td>HP 953</td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="0"></td>
+                    <td class="not-exist">N/E</td>
+                </tr>
+                <tr>
+                    <td>HP 963</td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="3"></td>
+                    <td class="not-exist">N/E</td>
+                </tr>
+                <tr>
+                    <td>HP W219X</td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="not-exist">N/E</td>
+                </tr>
+                <tr>
+                    <td>LC 422</td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="not-exist">N/E</td>
+                </tr>
+                <tr>
+                    <td>TN 248</td>
+                    <td class="stock-cell" data-value="3"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="stock-cell" data-value="2"></td>
+                    <td class="not-exist">N/E</td>
+                </tr>
+                <tr>
+                    <td>TN 423</td>
+                    <td class="stock-cell" data-value="5"></td>
+                    <td class="stock-cell" data-value="5"></td>
+                    <td class="stock-cell" data-value="1"></td>
+                    <td class="stock-cell" data-value="3"></td>
+                    <td class="not-exist">N/E</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="{{ url_for('static', filename='js/inventario.js') }}"></script>
+</body>
+</html>

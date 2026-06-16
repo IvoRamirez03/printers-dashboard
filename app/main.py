@@ -516,6 +516,10 @@ def api_trigger_scan():
     t.start()
     return jsonify({"ok": True})
 
+@app.route('/inventario')
+def inventario():
+    return render_template('inventario.html')
+
 # ---------------------------------------------------------------------------
 # Arranque
 # ---------------------------------------------------------------------------

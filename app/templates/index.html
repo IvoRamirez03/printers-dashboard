@@ -23,10 +23,13 @@
     </div>
     <div class="header-right">
       <div class="header-right">
-  <span id="scan-time">—</span>
-  <button id="scan-btn" onclick="triggerScan()">Escanear ahora</button>
-  <button id="export-btn" onclick="exportCSV()">Exportar CSV</button>
-</div>
+        <a href="{{ url_for('inventario') }}" class="header-btn" style="text-decoration: none;">
+          <button type="button">Ver Inventario</button>
+        </a>
+        <span id="scan-time">—</span>
+        <button id="scan-btn" onclick="triggerScan()">Escanear ahora</button>
+        <button id="export-btn" onclick="exportCSV()">Exportar CSV</button>
+      </div>
     </div>
   </header>
 
