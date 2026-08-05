@@ -33,7 +33,7 @@ docker compose logs -f
 
 | Variable         | Por defecto | Descripción                         |
 |------------------|-------------|-------------------------------------|
-| IP_START         | 20          | Último octeto IP inicial            |
+| IP_START         | 19          | Último octeto IP inicial            |
 | IP_END           | 37          | Último octeto IP final              |
 | SNMP_COMMUNITY   | public      | Community string SNMP               |
 | POLL_INTERVAL    | 120         | Segundos entre escaneos automáticos |

@@ -1,6 +1,43 @@
 {
   "printers": [
     {
+      "ip": "192.168.2.19",
+      "name": "IMPRESORA-ADMINISTRACION",
+      "model": "Brother MFC-L8390CDW",
+      "serial": "E82414E6N634122",
+      "toner_ref": "TN 248",
+      "connection": "Ethernet",
+      "protocol": "snmp_brother",
+      "type": "laser",
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
+    },
+    {
       "ip": "192.168.2.20",
       "name": "impresora-respaldo",
       "model": "Brother MFC-L3760CDW",
@@ -136,10 +173,10 @@
     {
       "ip": "192.168.2.25",
       "name": "Impresora-Investigacion",
-      "model": "Brother HL-L8230CDW series",
-      "serial": "E77440A1F638805",
+      "model": "Brother HL-L8390CDW series",
+      "serial": "E82414E6N618194",
       "toner_ref": "TN 248",
-      "connection": "WiFi",
+      "connection": "Ethernet",
       "protocol": "snmp_brother",
       "type": "laser",
       "supplies": [
@@ -220,14 +257,40 @@
     },
     {
       "ip": "192.168.2.28",
-      "name": "N/A",
-      "model": "Desconocido",
-      "serial": "",
-      "toner_ref": "",
-      "connection": "N/A",
-      "protocol": "none",
-      "type": "unknown",
-      "supplies": []
+      "name": "Eventos",
+      "model": "Brother MFC-L3760CDW",
+      "serial": "E82408K4N682834",
+      "toner_ref": "TN 248",
+      "connection": "Ethernet",
+      "protocol": "snmp_brother",
+      "type": "inkjet",
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
     },
     {
       "ip": "192.168.2.29",
@@ -242,7 +305,7 @@
     },
     {
       "ip": "192.168.2.30",
-      "name": "impresora-administracion",
+      "name": "imp-eventos",
       "model": "HP OfficeJet Pro 9125e series",
       "serial": "TH33S771FJ",
       "toner_ref": "HP 937",
@@ -265,13 +328,39 @@
     {
       "ip": "192.168.2.32",
       "name": "Impresora-Patricia",
-      "model": "HP Color LaserJet Pro 3202",
-      "serial": "VNC1X09033",
-      "toner_ref": "HP W219X",
+      "model": "Brother MFC-L3760CDW",
+      "serial": "E82790L5N407760",
+      "toner_ref": "TN 248",
       "connection": "Ethernet",
-      "protocol": "snmp_standard",
-      "type": "laser",
-      "supplies": []
+      "protocol": "snmp_brother",
+      "type": "inkjet",
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
     },
     {
       "ip": "192.168.2.33",
@@ -309,13 +398,39 @@
     {
       "ip": "192.168.2.36",
       "name": "EI",
-      "model": "HP Smart Tank 7000 series",
-      "serial": "CN493671CP",
-      "toner_ref": "HP 31XL/32XL",
-      "connection": "WiFi",
-      "protocol": "snmp_standard",
+      "model": "Brother MFC-L3740CDW series",
+      "serial": "Unknown",
+      "toner_ref": "TN 248",
+      "connection": "No Conneted",
+      "protocol": "snmp_brother",
       "type": "inkjet",
-      "supplies": []
+      "supplies": [
+        {
+          "id": 898,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 909,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 899,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 900,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 25,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
     },
     {
       "ip": "192.168.2.37",
