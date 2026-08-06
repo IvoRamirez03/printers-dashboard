@@ -4,3 +4,4 @@ venv
 .env
 env_file
 printers.json
+app/printers.sqlite3

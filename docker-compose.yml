@@ -13,4 +13,6 @@ services:
       POLL_INTERVAL: "120"
     # Necesario para que el contenedor acceda a la red local para SNMP
     # network_mode: host
+    volumes:
+      - ./app/printers.sqlite3:/app/printers.sqlite3
     restart: always

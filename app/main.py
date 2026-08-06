@@ -7,6 +7,7 @@ import json
 import asyncio
 from datetime import datetime
 from flask import Flask, render_template, jsonify
+from database import load_printers_from_db
 
 app = Flask(__name__)
 
@@ -73,12 +74,11 @@ BROTHER_IPP_NAME_MAP = {
 
 def load_printers():
     try:
-        with open(PRINTERS_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        print(f"[INFO] Flota cargada: {len(data['printers'])} impresoras")
-        return data["printers"]
+        printers = load_printers_from_db()
+        print(f"[INFO] Flota cargada desde SQLite: {len(printers)} impresoras")
+        return printers
     except Exception as e:
-        print(f"[ERROR] No se pudo cargar {PRINTERS_FILE}: {e}")
+        print(f"[ERROR] No se pudo cargar la flota desde SQLite: {e}")
         return []
 
 FLEET = load_printers()
