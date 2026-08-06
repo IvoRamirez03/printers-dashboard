@@ -1,0 +1,52 @@
+{
+  "printers": [
+    {
+      "ip": "0.0.0.0",
+      "name": "EJEMPLO-IMPRESORA-NOMBRE",
+      "model": "Marca Modelo 0000",
+      "serial": "XXXXXXXXXXXXXXX",
+      "toner_ref": "REF-0000",
+      "connection": "Ethernet",
+      "protocol": "snmp_brother",
+      "type": "laser",
+      "supplies": [
+        {
+          "id": 1,
+          "name": "Black Toner",
+          "type": "toner"
+        },
+        {
+          "id": 2,
+          "name": "Cyan Toner",
+          "type": "toner"
+        },
+        {
+          "id": 3,
+          "name": "Magenta Toner",
+          "type": "toner"
+        },
+        {
+          "id": 4,
+          "name": "Yellow Toner",
+          "type": "toner"
+        },
+        {
+          "id": 5,
+          "name": "Waste Toner",
+          "type": "waste"
+        }
+      ]
+    },
+    {
+      "ip": "0.0.0.0",
+      "name": "EJEMPLO-IMPRESORA-SIN-CONSUMIBLES",
+      "model": "Marca Modelo 1111",
+      "serial": "YYYYYYYYYYYYYYY",
+      "toner_ref": "REF-1111",
+      "connection": "WiFi",
+      "protocol": "snmp_standard",
+      "type": "inkjet",
+      "supplies": []
+    }
+  ]
+}
