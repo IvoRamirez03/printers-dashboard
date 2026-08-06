@@ -6,7 +6,7 @@ Python + Flask + Docker. Puerto: **http://localhost:2026**
 ## Requisitos
 
 - Docker Desktop (Mac/Windows) o Docker Engine (Linux)
-- Acceso de red a las impresoras (192.168.2.20–192.168.2.37)
+- Acceso de red a las impresoras (192.168.2.19–192.168.2.37)
 
 ## Arrancar
 
