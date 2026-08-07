@@ -7,6 +7,7 @@ services:
     ports:
       - "2026:2026"
     environment:
+      TZ: "Europe/Madrid"
       IP_START: "19"
       IP_END: "39"
       SNMP_COMMUNITY: "public"
