@@ -1,10 +1,10 @@
 /* global POLL_INTERVAL injected from template */
 
-const POLL_MS = (typeof POLL_INTERVAL !== 'undefined' ? POLL_INTERVAL : 120) * 1000;
-
 let currentFilter = 'all';
 let lastData = null;
+let lastRenderedHash = '';
 let firstLoad = true;
+let pollTimeoutId = null;
 
 // ---------------------------------------------------------------------------
 // API
@@ -32,7 +32,9 @@ async function triggerScan() {
   btn.textContent = 'Escaneando...';
   try {
     await fetch('/api/scan', { method: 'POST' });
-    setTimeout(poll, 800);
+    // Al forzar un escaneo, consultamos de inmediato
+    if (pollTimeoutId) clearTimeout(pollTimeoutId);
+    poll();
   } catch (e) {
     btn.disabled = false;
     btn.textContent = 'Escanear ahora';
@@ -41,7 +43,15 @@ async function triggerScan() {
 
 async function poll() {
   await fetchStatus();
-  setTimeout(poll, POLL_MS);
+
+  // 💡 POLLING DINÁMICO:
+  // Si está escaneando -> 3s para detectar rápido cuando termine.
+  // Si está en reposo  -> 15s para no hacer peticiones innecesarias.
+  const isScanning = lastData && lastData.scanning;
+  const nextInterval = isScanning ? 3000 : 15000;
+
+  if (pollTimeoutId) clearTimeout(pollTimeoutId);
+  pollTimeoutId = setTimeout(poll, nextInterval);
 }
 
 // ---------------------------------------------------------------------------
@@ -61,6 +71,7 @@ function setFilter(f, el) {
   currentFilter = f;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
+  lastRenderedHash = ''; // Forzar re-render al cambiar de filtro
   if (lastData) renderGrid(lastData.printers);
 }
 
@@ -88,7 +99,13 @@ function updateUI(data) {
   document.getElementById('count-low').textContent      = printers.filter(p => p.level === 'low').length;
   document.getElementById('count-ok').textContent       = printers.filter(p => p.level === 'ok' || p.level === 'unknown').length;
 
-  renderGrid(printers);
+  // 🛡️ ANTI-PARPADEO:
+  // Solo re-renderizar el HTML de las tarjetas si los datos de las impresoras o el filtro cambiaron.
+  const currentHash = JSON.stringify(printers) + currentFilter;
+  if (currentHash !== lastRenderedHash) {
+    lastRenderedHash = currentHash;
+    renderGrid(printers);
+  }
 }
 
 function renderGrid(printers) {

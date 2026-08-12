@@ -8,6 +8,7 @@ import asyncio
 from datetime import datetime
 from flask import Flask, render_template, jsonify
 from database import load_printers_from_db
+from notifier import process_alerts
 
 app = Flask(__name__)
 
@@ -466,6 +467,7 @@ def run_scan():
         state["last_scan"]   = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         state["scanning"]    = False
         state["scan_count"] += 1
+    threading.Thread(target=process_alerts, args=(printers,), daemon=True).start()    
 
 def scan_loop():
     with state_lock:
