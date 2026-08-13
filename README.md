@@ -1,55 +1,32 @@
-# Monitor de Impresoras — Dashboard SNMP
+# Monitor de Impresoras — Dashboard SNMP & IPP
 
-Dashboard web para monitorizar niveles de tinta/tóner via SNMP.
+Dashboard web para monitorizar niveles de tinta/tóner vía SNMP e IPP en tiempo real, con alertas consolidadas por correo electrónico.
+
 Python + Flask + Docker. Puerto: **http://localhost:2026**
 
 ## Requisitos
 
 - Docker Desktop (Mac/Windows) o Docker Engine (Linux)
-- Acceso de red a las impresoras (192.168.2.19–192.168.2.37)
+- Acceso de red a las impresoras (192.168.2.19–192.168.2.39)
+- Cuenta/Servidor SMTP para el envío de alertas por correo electrónico (ej. Gmail, Mailtrap, SendGrid)
 
-## Arrancar
+## Configuración (`.env`)
 
-```bash
-cd printer-dashboard
-docker compose up -d --build
-```
+Crea un archivo `.env` en la raíz del proyecto (al mismo nivel que `docker-compose.yml`) basándote en la siguiente plantilla:
 
-Abrir en el navegador: http://localhost:2026
+```ini
+# Configuración del Sistema e Impresoras
+TZ=Europe/Madrid
+IP_START=19
+IP_END=39
+SNMP_COMMUNITY=public
+POLL_INTERVAL=120
 
-## Parar
-
-```bash
-docker compose down
-```
-
-## Ver logs en tiempo real
-
-```bash
-docker compose logs -f
-```
-
-## Configuración (docker-compose.yml)
-
-| Variable         | Por defecto | Descripción                         |
-|------------------|-------------|-------------------------------------|
-| IP_START         | 19          | Último octeto IP inicial            |
-| IP_END           | 37          | Último octeto IP final              |
-| SNMP_COMMUNITY   | public      | Community string SNMP               |
-| POLL_INTERVAL    | 120         | Segundos entre escaneos automáticos |
-
-## Nota sobre network_mode: host
-
-El docker-compose.yml usa network_mode: host para que el contenedor
-pueda enviar tráfico SNMP (UDP 161) directamente a la LAN.
-
-- Linux: funciona sin cambios.
-- macOS / Windows Docker Desktop: no soporta network_mode: host.
-  En ese caso, comenta esa línea en el compose y ejecuta la app
-  directamente en el host:
-
-  ```bash
-  cd app
-  pip install -r requirements.txt
-  python main.py
-  ```
+# Configuración de Alertas por Correo (SMTP)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=tu_correo@gmail.com
+SMTP_PASS=tu_app_password_de_16_caracteres
+ALERT_EMAIL_TO=administrador@tuempresa.com
+ALERT_THRESHOLD=15
+ALERT_COOLDOWN_HOURS=24
