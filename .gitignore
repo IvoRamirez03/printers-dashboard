@@ -1,6 +1,9 @@
+# Ignorar .DS_Store en todo el proyecto
 .DS_Store
-*/.DS_Store
-venv
+**/.DS_Store
+
+# Entornos y datos
+venv/
 .env
 env_file
 printers.json
