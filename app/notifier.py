@@ -20,7 +20,7 @@ COOLDOWN_HOURS     = int(os.getenv("ALERT_COOLDOWN_HOURS", 24))
 _last_alerts = {}
 
 def build_html_digest(items):
-    """Construye la plantilla HTML con la tabla de consumibles críticos."""
+    """Construye la plantilla HTML con la tabla de consumibles bajos."""
     rows_html = ""
     for item in items:
         rows_html += f"""
@@ -36,48 +36,57 @@ def build_html_digest(items):
         </tr>
         """
 
-    return f"""<html>
+    return f"""<!DOCTYPE html>
+<html>
 <head><meta charset="utf-8"></head>
-<body style="margin: 0; padding: 0; background-color: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <div style="background-color: #f5f5f7; padding: 30px 15px;">
-    <table border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e5e5ea; padding: 28px; margin: auto; width: 100%;">
+<body style="margin: 0; padding: 0; background-color: #f4f5f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <div style="background-color: #f4f5f7; padding: 30px 15px;">
+    <table border="0" cellpadding="0" cellspacing="0" style="max-width: 580px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #e1e4e8; padding: 24px; margin: auto; width: 100%;">
       <tbody>
         <tr>
           <td>
-            <div style="text-align: center; margin-bottom: 20px;">
-              <h3 style="font-size: 20px; font-weight: 600; color: #1d1d1f; margin: 0;">
-                Consumibles en Nivel Crítico ({len(items)})
-              </h3>
-            </div>
+            <!-- Header Compacto de Estado -->
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; margin-bottom: 16px;">
+              <tr>
+                <td style="vertical-align: middle;">
+                  <h3 style="font-size: 18px; font-weight: 700; color: #d9381e; margin: 0; display: flex; align-items: center;">
+                    Consumibles Bajos ({len(items)})
+                  </h3>
+                </td>
+                <td style="text-align: right; vertical-align: middle;">
+                  <span style="font-size: 11px; font-weight: 700; color: #d9381e; background-color: #ffebe9; padding: 4px 8px; border-radius: 4px; border: 1px solid #ffc1c0;">
+                    &lt; {CRITICAL_THRESHOLD}%
+                  </span>
+                </td>
+              </tr>
+            </table>
 
-            <p style="font-size: 14px; color: #515154; line-height: 1.5; text-align: center; margin-bottom: 20px;">
-              Se han detectado los siguientes consumibles por debajo o cerca del umbral del <strong>{CRITICAL_THRESHOLD}%</strong>:
+            <p style="font-size: 13px; color: #57606a; margin: 0 0 16px 0; line-height: 1.4;">
+              Los siguientes dispositivos han alcanzado o superado el umbral bajo de tinta/tóner:
             </p>
 
-            <div style="background-color: #fbfbfd; border: 1px solid #e5e5ea; border-radius: 8px; padding: 12px; margin-bottom: 24px;">
+            <!-- Tabla de Datos Técnica y Compacta -->
+            <div style="border: 1px solid #e1e4e8; border-radius: 6px; overflow: hidden; margin-bottom: 20px;">
               <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse; font-size: 13px;">
-                <tr style="color: #86868b; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">
-                  <th style="padding: 8px 10px;">Impresora</th>
-                  <th style="padding: 8px 10px;">Consumible</th>
-                  <th style="padding: 8px 10px; text-align: right;">Nivel</th>
-                </tr>
+                <thead>
+                  <tr style="background-color: #f6f8fa; color: #24292f; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e1e4e8;">
+                    <th style="padding: 10px 12px;">Impresora / IP</th>
+                    <th style="padding: 10px 12px;">Consumible</th>
+                    <th style="padding: 10px 12px; text-align: right;">Nivel</th>
+                  </tr>
                 </thead>
-                <tbody>
+                <tbody style="font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;">
                   {rows_html}
                 </tbody>
               </table>
             </div>
 
-            <div style="background-color: #fff5f5; border: 1px solid #feb2b2; border-radius: 8px; padding: 14px; text-align: center; margin-bottom: 20px;">
-              <p style="font-size: 13px; color: #1d1d1f; margin: 0;">
-                <strong>Acción recomendada:</strong> Revisar el stock de reposición para los equipos indicados.
-              </p>
+            <!-- Botón de Acción Directa (CTA) -->
+            <div style="text-align: center; margin-bottom: 20px;">
+              <a href="http://192.168.2.51:2026" style="background-color: #0969da; color: #ffffff; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; display: inline-block;">
+                Abrir Printers Dashboard →
+              </a>
             </div>
-
-            <hr style="border: none; border-top: 1px solid #e5e5ea; margin: 20px 0 16px 0;">
-            <p style="font-size: 12px; color: #86868b; text-align: center; margin: 0;">
-              Notificación creada de manera automática a través de <a href="http://192.168.2.51:2026" style="color: #007aff; text-decoration: none; font-weight: 500;">printers-dashboard</a>.
-            </p>
           </td>
         </tr>
       </tbody>
@@ -95,12 +104,12 @@ def send_consolidated_email(critical_items):
 
     msg = EmailMessage()
     count = len(critical_items)
-    msg['Subject'] = f"⚠️ Alerta: {count} consumible(s) en nivel crítico"
+    msg['Subject'] = f"Alerta: {count} consumible(s) en nivel bajo"
     msg['From']    = SMTP_USER if SMTP_USER else "printer-dashboard@local"
     msg['To']      = ALERT_EMAIL_TO
 
     html_content = build_html_digest(critical_items)
-    msg.set_content(f"Alerta: Se han detectado {count} consumibles en nivel crítico.")
+    msg.set_content(f"Alerta: Se han detectado {count} consumibles en nivel bajo.")
     msg.add_alternative(html_content, subtype='html')
 
     try:
@@ -109,7 +118,7 @@ def send_consolidated_email(critical_items):
             if SMTP_USER and SMTP_PASS:
                 server.login(SMTP_USER, SMTP_PASS)
             server.send_message(msg)
-        print(f"[NOTIFIER] 📧 Correo consolidado enviado con éxito ({count} ítems).")
+        print(f"[NOTIFIER] Correo consolidado enviado con éxito ({count} ítems).")
         return True
     except Exception as e:
         print(f"[NOTIFIER ERROR] Fallo al enviar correo consolidado: {e}")
@@ -153,7 +162,7 @@ def process_alerts(printers):
                     })
 
     if items_to_alert:
-        print(f"[NOTIFIER] Se encontraron {len(items_to_alert)} ítems críticos para alertar.")
+        print(f"[NOTIFIER] Se encontraron {len(items_to_alert)} ítems en nivel bajo para alertar.")
         if send_consolidated_email(items_to_alert):
             # Marcar cooldown solo si el envío fue exitoso
             for item in items_to_alert:
